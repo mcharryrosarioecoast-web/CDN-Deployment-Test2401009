@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CDN Deployment Test</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eef3f8;
+            color: #263238;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            padding: 25px 8%;
+            border-bottom: 1px solid #dfe5eb;
+        }
+
+        header h1 {
+            color: #1769aa;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* Main */
+        .container {
+            width: 84%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        /* Hero */
+        .hero {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-content {
+            padding: 22px;
+        }
+
+        .hero-content h2 {
+            color: #1769aa;
+            margin-bottom: 8px;
+        }
+
+        .hero-content p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            color: #1769aa;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .info p {
+            font-size: 13px;
+            margin-bottom: 11px;
+            line-height: 1.5;
+        }
+
+        .info strong {
+            color: #263238;
+        }
+
+        .check-list {
+            padding-left: 20px;
+        }
+
+        .check-list li {
+            font-size: 13px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        code {
+            background: #edf4fa;
+            color: #1769aa;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 35px;
+            color: #718096;
+            font-size: 12px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero img {
+                height: 230px;
+            }
+
+            header {
+                padding: 22px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>CDN Deployment Test</h1>
+        <p>Testing website delivery and Content Delivery Network behavior.</p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <img 
+                src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80"
+                alt="Mountain landscape"
+            >
+
+            <div class="hero-content">
+                <h2>Welcome to My CDN Test Page</h2>
+
+                <p>
+                    This webpage is deployed online to test loading speed,
+                    caching, and CDN response headers.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Information Cards -->
+        <section class="cards">
+
+            <!-- Deployment Information -->
+            <div class="card">
+
+                <h3>Deployment Information</h3>
+
+                <div class="info">
+
+                    <p>
+                        <strong>Student Name:</strong>
+                        Mc Harry T. Rosario
+                    </p>
+
+                    <p>
+                        <strong>Student ID:</strong>
+                        2401009
+                    </p>
+
+                    <p>
+                        <strong>Deployment Time:</strong>
+                        2026-10-06
+                    </p>
+
+                    <p>
+                        <strong>Browser:</strong>
+                        <span id="browser"></span>
+                    </p>
+
+                    <p>
+                        <strong>Screen Size:</strong>
+                        <span id="screen"></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CDN Testing -->
+            <div class="card">
+
+                <h3>CDN Testing Guide</h3>
+
+                <ul class="check-list">
+
+                    <li>
+                        Open Developer Tools using <code>F12</code>.
+                    </li>
+
+                    <li>
+                        Select the <strong>Network</strong> tab.
+                    </li>
+
+                    <li>
+                        Refresh the webpage.
+                    </li>
+
+                    <li>
+                        Click the HTML request.
+                    </li>
+
+                    <li>
+                        Check the <strong>Response Headers</strong>.
+                    </li>
+
+                    <li>
+                        Look for <code>Server</code>,
+                        <code>Age</code>, and
+                        <code>ETag</code>.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        CDN Deployment Test Page © 2026
+    </footer>
+
+
+    <script>
+
+        // Browser information
+        document.getElementById("browser").textContent =
+            navigator.userAgent;
+
+        // Screen size
+        document.getElementById("screen").textContent =
+            window.innerWidth + " × " + window.innerHeight + " px";
+
+    </script>
+
+</body>
+</html>
